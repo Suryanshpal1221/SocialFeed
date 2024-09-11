@@ -2,24 +2,26 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  align-items: center;
+  width: 100%;
   padding: 8px 16px;
   background-color: #1877f2;
   color: #ffffff;
 }
 
 .appIcon {
-  font: 900;
+  font-weight: 1000;
   font-size: 24px;
 }
 
 .middle {
   display: flex;
+  align-items: center;
 }
 
 .pages {
   display: flex;
-  width: 150px;
+  width: 180px;
   justify-content: space-between;
   align-items: center;
   font-size: medium;
@@ -28,7 +30,7 @@
 
 .iconCont {
   display: flex;
-  width: 280px;
+  width: 240px;
   justify-content: space-between;
   align-items: center;
 }

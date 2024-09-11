@@ -1,27 +1,28 @@
-import { CustomInput } from "../index";
-import "./Header.css";
-import { FaUserLarge } from "react-icons/fa6";
-import { MdMessage } from "react-icons/md";
-import { BsBellFill } from "react-icons/bs";
+import { CustomInput, IconWrapper, CircularAvatar } from "../index";
+import { icons } from "../IconWrapper/Icons";
+import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <div className="main">
-      <text className="appIcon">Social Feed</text>
-      <div className="middle">
+    <div className={styles.main}>
+      <text className={styles.appIcon}>SocialFeed</text>
+      <div className={styles.middle}>
         <CustomInput />
-        <div className="pages">
+        <div className={styles.pages}>
           <text>Homepage</text>
           <text>Timeline</text>
         </div>
-        <div className="iconCont">
-          <div className="icons">
-            <FaUserLarge size={16} />
-            <MdMessage size={20} />
-            <BsBellFill size={16} />
+        <div className={styles.iconCont}>
+          <div className={styles.icons}>
+            <IconWrapper Icon={icons.fauserlarge} size={16} />
+            <IconWrapper Icon={icons.mdmessage} size={20} />
+            <IconWrapper Icon={icons.bsbellfill} size={16} />
           </div>
-          <div className="displayProfile">
-            <FaUserLarge size={16} />
+          <div className={styles.displayProfile}>
+            <CircularAvatar
+              size={32}
+              url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s"
+            />
           </div>
         </div>
       </div>
