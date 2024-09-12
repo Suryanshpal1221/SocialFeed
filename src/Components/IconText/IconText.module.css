@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.text {
+  font-size: 15px;
+  color: rgb(63, 63, 63);
+  padding-top: 6px;
+  margin-left: 14px;
+}

@@ -49,7 +49,7 @@ function PostingCard() {
             Icon={icons.mdvideolibrary}
             size={20}
             text="Photo or Video"
-            color="red"
+            color="#FF7043"
           />
           <AttachmentComp
             Icon={icons.pitagsimplefill}
@@ -67,7 +67,7 @@ function PostingCard() {
             Icon={icons.mdemojiemotions}
             size={20}
             text="Feelings"
-            color="yellow"
+            color="#FDD835"
           />
         </div>
         <button className={styles.btn}>Share</button>

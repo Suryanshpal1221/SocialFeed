@@ -4,3 +4,6 @@ export { default as SideBar } from "./SideBar/SideBar";
 export { default as IconWrapper } from "./IconWrapper/IconWrapper";
 export { default as PostingCard } from "./PostingCard/PostingCard";
 export { default as CircularAvatar } from "./CircularAvatar/CircularAvatar";
+export { default as PostCard } from "./PostCard/PostCard";
+export { default as FriendCard } from "./FriendCard/FriendCard";
+export { default as IconText } from "./IconText/IconText";

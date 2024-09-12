@@ -29,12 +29,12 @@
 
 .attachmentComp {
   display: flex;
-  gap: 8px;
+  gap: 12px;
 }
 
 .btn {
   padding: 6px 6px;
-  background-color: rgb(59, 176, 59);
+  background-color: rgba(48, 145, 48, 0.9);
   border: none;
   border-radius: 4px;
   font-weight: 500;

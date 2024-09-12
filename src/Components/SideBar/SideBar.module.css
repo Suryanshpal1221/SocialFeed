@@ -1,6 +1,6 @@
 .main {
   box-sizing: border-box;
-  min-width: 300px;
+  min-width: 20%;
   height: 95vh;
   scroll-behavior: smooth;
   overflow: scroll;
@@ -9,7 +9,9 @@
 .activities {
   display: flex;
   flex-direction: column;
-  margin: 16px 16px;
+  margin: 0 20px;
+  padding-top: 36px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgb(208, 208, 208);
 }
 
@@ -28,10 +30,10 @@
   padding: 7px 28px;
   border: none;
   border-radius: 4px;
-  margin-bottom: 16px;
 }
 
 .profiles {
   display: flex;
   flex-direction: column;
+  padding: 16px;
 }
