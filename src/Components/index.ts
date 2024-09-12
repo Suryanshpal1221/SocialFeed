@@ -7,3 +7,4 @@ export { default as CircularAvatar } from "./CircularAvatar/CircularAvatar";
 export { default as PostCard } from "./PostCard/PostCard";
 export { default as FriendCard } from "./FriendCard/FriendCard";
 export { default as IconText } from "./IconText/IconText";
+export { default as Input } from "./Input/Input";
