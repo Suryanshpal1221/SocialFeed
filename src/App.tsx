@@ -1,6 +1,5 @@
 import styles from "./App.module.css";
-// import Homepage from "./Pages/Homepage/Homepage";
-import { LoginPage } from "./Pages";
+import { Homepage, LoginPage, SignupPage } from "./Pages";
 
 function App() {
   return (
