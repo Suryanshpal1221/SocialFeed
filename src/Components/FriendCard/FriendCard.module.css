@@ -4,6 +4,9 @@
   align-items: center;
   margin-bottom: 16px;
 }
+.friend:hover {
+  cursor: pointer;
+}
 .friend span {
   font-size: 16px;
   font-weight: 500;

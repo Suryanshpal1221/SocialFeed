@@ -4,6 +4,9 @@
   align-items: center;
   padding-bottom: 16px;
 }
+.main:hover {
+  cursor: pointer;
+}
 
 .text {
   font-size: 15px;
