@@ -12,18 +12,18 @@ function Header() {
           <text>Homepage</text>
           <text>Timeline</text>
         </div>
-        <div className={styles.iconCont}>
-          <div className={styles.icons}>
-            <IconWrapper Icon={icons.fauserlarge} size={16} />
-            <IconWrapper Icon={icons.mdmessage} size={20} />
-            <IconWrapper Icon={icons.bsbellfill} size={16} />
-          </div>
-          <div className={styles.displayProfile}>
-            <CircularAvatar
-              size={32}
-              url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s"
-            />
-          </div>
+      </div>
+      <div className={styles.iconCont}>
+        <div className={styles.icons}>
+          <IconWrapper Icon={icons.fauserlarge} size={16} />
+          <IconWrapper Icon={icons.mdmessage} size={20} />
+          <IconWrapper Icon={icons.bsbellfill} size={16} />
+        </div>
+        <div className={styles.displayProfile}>
+          <CircularAvatar
+            size={32}
+            url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s"
+          />
         </div>
       </div>
     </div>

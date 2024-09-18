@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./SideBar.module.css";
-import { IconWrapper } from "..";
+import { IconText, FriendCard } from "..";
 import { icons } from "../IconWrapper/Icons";
 
 function SideBar() {
@@ -12,48 +12,19 @@ function SideBar() {
   return (
     <div className={styles.main}>
       <div className={styles.activities}>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} />
-          <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} />
-          <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} />
-          <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} />
-          <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-        </div>
-        <div className={styles.activity}>
-          <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-        </div>
+        {icons.sidebaricons.map((item, index) => {
+          return (
+            <IconText
+              Icon={icons.sidebaricons[index]}
+              size={24}
+              text={arr[index]}
+            />
+          );
+        })}
+
         {show && (
           <>
-            <div className={styles.activity}>
-              <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-            </div>
-            <div className={styles.activity}>
-              <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-            </div>
-            <div className={styles.activity}>
-              <IconWrapper Icon={icons.mdrssfeed} size={24} /> <text>Feed</text>
-            </div>
+            <IconText Icon={icons.mdrssfeed} size={24} text="Feed" />
           </>
         )}
         <button className={styles.button} onClick={handleShowmore}>
@@ -61,15 +32,29 @@ function SideBar() {
         </button>
       </div>
       <div className={styles.profiles}>
-        <text>Hello</text>
-        <text>Hello</text>
-        <text>Hello</text>
-        <text>Hello</text>
-        <text>Hello</text>
-        <text>Hello</text>
+        <FriendCard />
+        <FriendCard />
+        <FriendCard />
+        <FriendCard />
+        <FriendCard />
+        <FriendCard />
+        <FriendCard />
+        <FriendCard />
       </div>
     </div>
   );
 }
+
+const arr = [
+  "Feed",
+  "Chats",
+  "Videos",
+  "Groups",
+  "Bookmarks",
+  "Questions",
+  "Jobs",
+  "Events",
+  "Courses",
+];
 
 export default SideBar;

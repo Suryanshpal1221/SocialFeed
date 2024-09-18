@@ -1,20 +1,22 @@
-import { Header, SideBar, PostingCard } from "./Components";
 import styles from "./App.module.css";
+import { Homepage, LoginPage, SignupPage } from "./Pages";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./Store/Store";
 
 function App() {
   return (
-    <>
-      <Header />
-      <div className={styles.section1}>
-        <SideBar />
-        <div className={styles.contentContainer}>
-          <div className={styles.leftGrid}>
-            <PostingCard />
-          </div>
-          <div className={styles.rightGrid}>Hello</div>
-        </div>
-      </div>
-    </>
+    <div className={styles.container}>
+      <Provider store={store}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/homepage" element={<Homepage />} />
+          </Routes>
+        </Router>
+      </Provider>
+    </div>
   );
 }
 

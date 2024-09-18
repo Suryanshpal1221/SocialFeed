@@ -8,6 +8,7 @@ interface AttachmentCompProps {
   size?: number;
   color?: string;
   text?: string;
+  onClick?: () => void;
 }
 
 const AttachmentComp: React.FC<AttachmentCompProps> = ({
@@ -15,9 +16,10 @@ const AttachmentComp: React.FC<AttachmentCompProps> = ({
   size,
   color,
   text,
+  onClick,
 }) => {
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <div className={styles.AttachmentComp} onClick={onClick}>
       <IconWrapper Icon={Icon} size={size} color={color} />
       <span
         style={{
@@ -33,6 +35,15 @@ const AttachmentComp: React.FC<AttachmentCompProps> = ({
   );
 };
 
+const handlePhotoVideo = () => {
+  console.log("Upload photo or video");
+};
+const handleTag = () => {};
+const handleLocation = () => {};
+const handleFeelings = () => {};
+
+const handleShare = () => {};
+
 function PostingCard() {
   return (
     <div className={styles.container}>
@@ -41,7 +52,7 @@ function PostingCard() {
           url="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1725926400&semt=ais_hybrid"
           size={40}
         />
-        <h5>What's in your mind?</h5>
+        <textarea placeholder="What's in your mind ritesh?" />
       </div>
       <div className={styles.attachmentsSection}>
         <div className={styles.attachmentComp}>
@@ -49,28 +60,34 @@ function PostingCard() {
             Icon={icons.mdvideolibrary}
             size={20}
             text="Photo or Video"
-            color="red"
+            color="#FF7043"
+            onClick={handlePhotoVideo}
           />
           <AttachmentComp
             Icon={icons.pitagsimplefill}
             size={20}
             text="Tag"
             color="blue"
+            onClick={handleTag}
           />
           <AttachmentComp
             Icon={icons.falocationdot}
             size={20}
             text="Location"
             color="green"
+            onClick={handleLocation}
           />
           <AttachmentComp
             Icon={icons.mdemojiemotions}
             size={20}
             text="Feelings"
-            color="yellow"
+            color="#FDD835"
+            onClick={handleFeelings}
           />
         </div>
-        <button className={styles.btn}>Share</button>
+        <button className={styles.btn} onClick={handleShare}>
+          Share
+        </button>
       </div>
     </div>
   );
