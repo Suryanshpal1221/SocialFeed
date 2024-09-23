@@ -48,6 +48,10 @@ function Homepage() {
               <FriendCard online={true} />
               <FriendCard online={true} />
               <FriendCard online={true} />
+              <FriendCard online={true} />
+              <FriendCard online={true} />
+              <FriendCard online={true} />
+              <FriendCard online={true} />
             </div>
           </div>
         </div>

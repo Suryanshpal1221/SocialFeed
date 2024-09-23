@@ -1,12 +1,7 @@
 import { CircularAvatar } from "..";
 import styles from "./FriendCard.module.css";
 
-interface FriendCardProps {
-  online?: boolean;
-  onClick?: () => void;
-}
-
-const FriendCard: React.FC<FriendCardProps> = ({ online = false, onClick }) => {
+const FriendCard = ({ online = false, onClick }) => {
   return (
     <div className={styles.friend} onClick={onClick}>
       {online && <div className={styles.greendot} />}

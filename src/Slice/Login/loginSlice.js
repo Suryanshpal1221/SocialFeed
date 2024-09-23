@@ -1,13 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-interface loginState {
-  isLoading: boolean;
-  error: boolean;
-  data: {};
-}
-
-const initialState: loginState = {
-  isLoading: true,
+const initialState = {
+  isLoading: false,
   error: false,
   data: {},
 };
@@ -16,7 +10,7 @@ export const loginSlice = createSlice({
   name: "loginSlice",
   initialState,
   reducers: {
-    update: (state, action: PayloadAction<loginState>) => {
+    update: (state, action) => {
       state.isLoading = action.payload.isLoading ?? state.isLoading;
       state.error = action.payload.error ?? state.error;
       state.data = {

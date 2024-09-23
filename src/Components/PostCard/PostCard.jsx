@@ -1,6 +1,6 @@
-import { CircularAvatar, IconWrapper } from "..";
+import { CircularAvatar, IconWrapper } from "../index.js";
 import styles from "./PostCard.module.css";
-import { icons } from "../IconWrapper/Icons";
+import { icons } from "../IconWrapper/Icons.js";
 
 const PostCard = () => {
   return (

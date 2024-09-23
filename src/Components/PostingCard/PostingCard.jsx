@@ -1,26 +1,11 @@
 import { CircularAvatar, IconWrapper } from "..";
 import styles from "./PostingCard.module.css";
-import { IconType } from "react-icons";
-import { icons } from "../IconWrapper/Icons";
+// import { icons } from "../IconWrapper/Icons";
 
-interface AttachmentCompProps {
-  Icon: IconType;
-  size?: number;
-  color?: string;
-  text?: string;
-  onClick?: () => void;
-}
-
-const AttachmentComp: React.FC<AttachmentCompProps> = ({
-  Icon,
-  size,
-  color,
-  text,
-  onClick,
-}) => {
+const AttachmentComp = ({ Icon, size, color, text, onClick }) => {
   return (
     <div className={styles.AttachmentComp} onClick={onClick}>
-      <IconWrapper Icon={Icon} size={size} color={color} />
+      {/* <IconWrapper Icon={Icon} size={size} color={color} /> */}
       <span
         style={{
           fontSize: 12,

@@ -2,19 +2,16 @@ import { Input } from "../../Components/index";
 import styles from "./LoginPage.module.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../Store/Store";
 import { useAuth } from "../../Hooks/Login/hooks";
 import { useState, ChangeEvent } from "react";
 
 function LoginPage() {
   const navigate = useNavigate();
   const { login } = useAuth();
-  const { isLoading, error, data } = useSelector(
-    (state: RootState) => state.login
-  );
+  const { isLoading, error, data } = useSelector((state) => state.login);
 
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     login(username, password);
@@ -37,17 +34,13 @@ function LoginPage() {
           <Input
             placeholder="Username"
             value={username}
-            onChange={(e: ChangeEvent<HTMLInputElement>): void =>
-              setUsername(e.target.value)
-            }
+            onChange={(e) => setUsername(e.target.value)}
           />
           <Input
             placeholder="Password"
             type="password"
             value={password}
-            onChange={(e: ChangeEvent<HTMLInputElement>): void =>
-              setPassword(e.target.value)
-            }
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button className={styles.btn1} onClick={handleLogin}>
             {isLoading ? "Logging in..." : "Login"}

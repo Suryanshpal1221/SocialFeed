@@ -4,7 +4,7 @@ import { IconText, FriendCard } from "..";
 import { icons } from "../IconWrapper/Icons";
 
 function SideBar() {
-  const [show, setShow] = useState<boolean>(false);
+  const [show, setShow] = useState(false);
 
   const handleShowmore = () => {
     setShow(!show);

@@ -4,9 +4,6 @@ import loginReducer from "../Slice/Login/loginSlice";
 
 export const store = configureStore({
   reducer: {
-    signup: signupReducer,
     login: loginReducer,
   },
 });
-
-export type RootState = ReturnType<typeof store.getState>;

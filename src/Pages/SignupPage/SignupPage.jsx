@@ -1,33 +1,30 @@
-import { useState, ChangeEvent } from "react";
+import { useState } from "react";
 import styles from "./SignupPage.module.css";
 import { Input } from "../../Components/index";
-import { useSelector } from "react-redux";
-import { RootState } from "../../Store/Store";
-import { useAuth } from "../../Hooks/Login/hooks";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signup } from "../../Slice/Login/signupSlice";
 
 function SignupPage() {
   const navigate = useNavigate();
-  const { signup } = useAuth();
-
-  const [username, setUsername] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [confPassword, setConfPassword] = useState<string>("");
-  const [passErr, setPassErr] = useState<boolean>(false);
-
-  const { isLoading, error, data } = useSelector(
-    (state: RootState) => state.signup
-  );
+  const dispatch = useDispatch();
+  const { isLoading, error, data } = useSelector((state) => state.signup);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confPassword, setConfPassword] = useState("");
+  const [passErr, setPassErr] = useState(false);
 
   const handleSignup = () => {
-    signup(username, email, confPassword);
+    if (username && email && password && password === confPassword) {
+      dispatch(signup(username, email, password));
+    }
   };
   const handleLogin = () => {
     navigate("/");
   };
 
-  const handleConfPassword = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleConfPassword = (e) => {
     setConfPassword(e.target.value);
   };
 
@@ -42,28 +39,24 @@ function SignupPage() {
           <Input
             placeholder="Username"
             value={username}
-            onChange={(e: ChangeEvent<HTMLInputElement>): void =>
-              setUsername(e.target.value)
-            }
+            onChange={(e) => setUsername(e.target.value)}
           />
           <Input
             placeholder="Email"
             value={email}
-            onChange={(e: ChangeEvent<HTMLInputElement>): void =>
-              setEmail(e.target.value)
-            }
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Input
             placeholder="Password"
             value={password}
-            onChange={(e: ChangeEvent<HTMLInputElement>): void =>
-              setPassword(e.target.value)
-            }
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
           />
           <Input
-            placeholder="Password Again"
+            placeholder="Confirm Password"
             value={confPassword}
             onChange={handleConfPassword}
+            type="password"
           />
           {passErr && <div>Enter same password.</div>}
 
